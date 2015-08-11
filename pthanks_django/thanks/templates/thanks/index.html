@@ -1,0 +1,9 @@
+{% if latest_thanks_list %}
+    <ul>
+    {% for question in latest_thanks_list %}
+        <li><a href="/thanks/{{ question.id }}/">{{ question.memo}}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No thanks are available.</p>
+{% endif %}
