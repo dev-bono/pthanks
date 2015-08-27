@@ -1,12 +1,41 @@
 {% load staticfiles %}
-<link rel="stylesheet" media="screen" href="{% static "thanks/css/reset.css" %}">
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Podotree Thanks</title>
+    <link rel="stylesheet" type="text/css" href="{% static "thanks/css/reset.css" %}">
+    <link rel="stylesheet" type="text/css" href="{% static "thanks/css/thanks.css" %}">
+    <link rel="Shortcut Icon" type="image/x-icon" href="/images/favicon.ico" />
+    <link href='//fonts.googleapis.com/css?family=Source+Sans+Pro:200,200italic'
+          rel='stylesheet' type='text/css'>
+  </head>
+  <body>
+    <header>
+      <h1>The pThanks</h1>
+      <p>칭찬해 주세요.</p>
+    </header>
 
-{% if latest_thanks_list %}
+    {% if latest_thanks_list %}
     <ul>
-    {% for question in latest_thanks_list %}
+        {% for question in latest_thanks_list %}
         <li><a href="/thanks/{{ question.id }}/">{{ question.memo}}</a></li>
-    {% endfor %}
+        {% endfor %}
     </ul>
-{% else %}
+    {% else %}
     <p>No thanks are available.</p>
-{% endif %}
+    {% endif %}
+
+
+    <footer>
+      <strong>Podotree</strong>
+      <p>&copy;2010 Podotree.Inc
+         All rights reserved.</p>
+    </footer>
+    <script>
+    </script>
+  </body>
+</html>
+
+
+
