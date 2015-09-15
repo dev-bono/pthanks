@@ -1,10 +1,11 @@
 from django.conf.urls import include, url
+from thanks.views import IndexView
 
 from . import views
 
 urlpatterns = [
 	# ex: /thanks/
-	url(r'^$', views.index, name='index'),
+	url(r'^$', IndexView.as_view(), name='index'),
 	# # ex: /thanks/5/
 	# url(r'^(?P<question_id>[0-9]+)/$', views.detail, name='detail'),
 	# # ex: /polls/5/results/

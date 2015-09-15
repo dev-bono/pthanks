@@ -1,8 +1,9 @@
 from django.db import models
-from django.utils.encoding import force_bytes
+
 
 # Create your models here.
 class Thanks(models.Model):
+
 	user_id = models.IntegerField()
 	thanks_to = models.IntegerField()
 	memo = models.TextField(max_length=500)
