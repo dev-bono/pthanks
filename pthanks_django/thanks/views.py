@@ -24,3 +24,7 @@ class IndexView(ListView):
 # 		'latest_thanks_list': latest_thanks_list,
 # 	}
 # 	return render(request, 'thanks/index.html', context)
+
+
+class LoginView(TemplateView):
+	template_name = "thanks/login.html"

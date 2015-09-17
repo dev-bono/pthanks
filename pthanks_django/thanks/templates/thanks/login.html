@@ -1,0 +1,37 @@
+{% extends "thanks/layout.html" %}
+
+{% block content %}
+    <form action="." data-ajax="false" method="post">{% csrf_token %}
+	    <ul data-role="listview" data-inset="true">
+	        <li>
+	            <label for="username">아이디</label>
+                <input type="text" name="username" id="username" value="{{ username }}">
+	        </li>
+	        <li>
+	            <label for="password">비밀번호</label>
+				<input type="password" name="password" id="password" value="" autocomplete="off">
+	        </li>
+			{% if reason != '' and reason != 'null' %}
+	        <li style="color:red;">
+				{% if reason == 'DENY' %}
+					접근 권한이 없는 아이디입니다.
+				{% endif %}
+				{% if reason == 'WRONG' %}
+					잘못된 아이디이거나 비밀번호가 틀렸습니다.
+				{% endif %}
+	        </li>
+			{% endif %}
+	        <li>
+                <button type="submit" data-theme="a">로그인</button>
+	        </li>
+	    </ul>
+	</form>
+{% endblock content %}
+
+
+
+
+
+
+
+
